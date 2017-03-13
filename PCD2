@@ -1,0 +1,41 @@
+public void Rotate90(){
+    ResultBuffer=deepCopy(SourceBuffer);
+    BufferedImage imge=new BufferedImage(
+    SourceBuffer.getHeight(),SourceBuffer.getWidth(),BufferedImage.TYPE_INT_RGB);
+    for(int y=0;y<SourceBuffer.getWidth();y++){
+        for(int x=0;x<SourceBuffer.getHeight();x++){
+            imge.setRGB(x,y,SourceBuffer.getRGB(y,SourceBuffer.getHeight()-1-x));
+        }
+    }
+    ResultImage=imge;
+    ScaleResultImage=ResultImage.getScaledInstance((int)sWidth ,(int)sHeight, Image.SCALE_DEFAULT);
+    ScaleResultIcon=new ImageIcon(ScaleResultImage);
+}
+
+public void Rotate180(){
+    ResultBuffer=deepCopy(SourceBuffer);
+    BufferedImage imge=new BufferedImage(SourceBuffer.getWidth(),
+    SourceBuffer.getHeight(),BufferedImage.TYPE_INT_RGB);
+    for(int y=0;y<SourceBuffer.getHeight();y++){
+        for(int x=0;x<SourceBuffer.getWidth();x++){
+            imge.setRGB(x,y,SourceBuffer.getRGB(SourceBuffer.getWidth()-1-x,SourceBuffer.getHeight()-1-y));
+        }
+    }
+    ResultImage=imge;
+    ScaleResultImage=ResultImage.getScaledInstance((int)sWidth, (int)sHeight, Image.SCALE_DEFAULT);
+    ScaleResultIcon=new ImageIcon(ScaleResultImage);
+}
+
+public void Rotate270(){
+    ResultBuffer=deepCopy(SourceBuffer);
+    BufferedImage imge=new BufferedImage(
+    SourceBuffer.getHeight(),SourceBuffer.getWidth(),BufferedImage.TYPE_INT_RGB);
+    for(int y=0;y<SourceBuffer.getWidth();y++){
+        for(int x=0;x<SourceBuffer.getHeight();x++){
+            imge.setRGB(x,y,SourceBuffer.getRGB(SourceBuffer.getWidth()-1-y,x));
+        }
+    }
+    ResultImage=imge;
+    ScaleResultImage=ResultImage.getScaledInstance((int)sWidth ,(int)sHeight, Image.SCALE_DEFAULT);
+    ScaleResultIcon=new ImageIcon(ScaleResultImage);
+}
