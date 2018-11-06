@@ -1,4 +1,4 @@
-public void Rotate90(){
+public void Rotate900000(){
     ResultBuffer=deepCopy(SourceBuffer);
     BufferedImage imge=new BufferedImage(
     SourceBuffer.getHeight(),SourceBuffer.getWidth(),BufferedImage.TYPE_INT_RGB);
